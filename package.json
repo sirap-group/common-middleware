@@ -1,5 +1,5 @@
 {
-  "name": "common-middleware",
+  "name": "common-middleware-fix",
   "description": "Common middleware for applications built with base-methods (like assemble, verb, generate, and update)",
   "version": "1.0.1-0",
   "homepage": "https://github.com/jonschlinkert/common-middleware",
