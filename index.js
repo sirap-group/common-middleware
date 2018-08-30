@@ -102,17 +102,18 @@ function isHandled(file, next) {
  */
 
 function stripPrefixes(file, next) {
-  if (file.isDirectory()) {
-    next(null, file);
-    return;
-  }
-
   if (!/templates/.test(file.dirname)) {
     next(null, file);
     return;
   }
 
-  if (file.has('action.stripPrefixes')) {
+  if (!file.prototype) {
+    console.log(require('chalk').red('File is seems not a Vinyl object'), file)
+    next(null, file)
+    return
+  }
+
+  if (file.has && file.has('action.stripPrefixes')) {
     next(null, file);
     return;
   }
